@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietto da Visita - Stephania Soler</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 350px;
+        }
+        .logo {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .position {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .contact {
+            margin-top: 15px;
+        }
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <img src="LOGO-BURPY.png" alt="Burpy Logo">
+        </div>
+        <div class="content">
+            <h1>Stephania Soler</h1>
+            <p class="position">ÁREA DE<br>FINANZAS Y COMPRAS</p>
+            <p class="email">finanzas@burpy.it</p>
+            <div class="contact">
+                <p>M.: +34 611 63 90 59</p>
+            </div>
+            <p class="website">www.burpy.it</p>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+    <script>
+        new QRCode(document.getElementById("qrcode"), {
+            text: window.location.href,
+            width: 128,
+            height: 128
+        });
+    </script>
+</body>
+</html>
